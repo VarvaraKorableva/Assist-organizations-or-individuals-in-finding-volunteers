@@ -19,7 +19,7 @@ class VolunteerSerializer(serializers.ModelSerializer):
 class ActionVolunteerSerializer(serializers.ModelSerializer):
     class Meta:
         model = ActionVolunteer
-        fields = ('id',)
+        fields = ('volunteer_id', 'action_id')
         read_only_fields = ('id',)   
 
 
