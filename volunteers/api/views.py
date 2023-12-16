@@ -11,11 +11,11 @@ class ActionViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.Gen
     queryset = Action.objects.all() #django orm select * from action
     serializer_class = ActionSerializer
 
-class VolunteerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
+class VolunteerViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = Volunteer.objects.all()
     serializer_class = VolunteerSerializer 
 
-class ActionVolunteerViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
+class ActionVolunteerViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = ActionVolunteer.objects.all()
     serializer_class = ActionVolunteerSerializer
 
