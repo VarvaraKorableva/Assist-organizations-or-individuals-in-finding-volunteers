@@ -1,6 +1,7 @@
+from django.shortcuts import get_list_or_404
 from rest_framework import mixins, viewsets
-from assist.models import Action, Volunteer, ActionVolunteer
-from .serializers import ActionSerializer, VolunteerSerializer, ActionVolunteerSerializer
+from assist.models import Action, Volunteer, ActionVolunteer, Company, ActionCompany
+from .serializers import ActionSerializer, VolunteerSerializer, CompanySerializer, ActionCompanySerializer, ActionVolunteerSerializer
 
 class ActionViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
     '''
@@ -19,4 +20,21 @@ class ActionVolunteerViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = ActionVolunteer.objects.all()
     serializer_class = ActionVolunteerSerializer
 
-    
+    def perform_create(self, serializer):
+        serializer.save()
+        companies = get_list_or_404(Company, action = serializer.data.get('action_id'))
+
+        mails = [item.email for item in companies]
+        telegrams = [item.telegram for item in companies]
+
+        print(mails, telegrams)
+
+
+class CompanyViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer 
+
+
+class ActionCompanyViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+    queryset = ActionCompany.objects.all()
+    serializer_class = ActionCompanySerializer 

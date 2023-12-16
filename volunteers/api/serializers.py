@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from assist.models import Action, Volunteer, ActionVolunteer, ActionCompany
+from assist.models import Action, Volunteer, ActionVolunteer, Company, ActionCompany
 
 
 class ActionSerializer(serializers.ModelSerializer):
@@ -20,13 +20,45 @@ class ActionVolunteerSerializer(serializers.ModelSerializer):
     class Meta:
         model = ActionVolunteer
         fields = ('volunteer_id', 'action_id')
-        read_only_fields = ('id',)   
+
+    '''
+    class ListActionVolunteerSerializer(serializers.ListSerializer):
+    child = ActionVolunteerSerializer()
+
+    
+    передавать лист объектов, а не объект
+    [
+        {
+            "volunteer_id": 1, 
+            "action_id": 2
+        },
+
+                {
+            "volunteer_id": 1, 
+            "action_id": 1
+        }
+    ]
+    
 
 
-'''
+    def create(self, validated_data):
+        return [ActionVolunteer.objects.create(**item) for item in validated_data]
+    '''
+        
+
+                
+
+
+class CompanySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Company
+        fields = ('id','name','tin','email', 'contact_person', 'site', 'telegram')
+        read_only_fields = ('id',) 
+
+
 class ActionCompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = ActionCompany
-        fields = ('id')
-        read_only_fields = ('id',)                   
-'''
+        fields = ('action_id','company_id')     
+
+
