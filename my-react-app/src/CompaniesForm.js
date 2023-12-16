@@ -53,6 +53,61 @@ function CompaniesForm() {
 export default CompaniesForm;
 
 
+// import React, { useState } from 'react';
+// import './FormStyles.css';
+
+// function CompaniesForm() {
+//     const [formData, setFormData] = useState({
+//         name: '',
+//         tin: '',
+//         email: '',
+//         contactPerson: '',
+//         site: '',
+//         telegram: ''
+//     });
+
+//     const handleChange = (e) => {
+//         setFormData({ ...formData, [e.target.name]: e.target.value });
+//     }
+
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+//         // Replace with your actual API endpoint
+//         fetch('http://localhost:8000/companies/', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 // Include CSRF token if needed
+//             },
+//             body: JSON.stringify(formData)
+//         })
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error('Network response was not ok');
+//             }
+//             return response.json();
+//         })
+//         .then(data => {
+//             console.log('Success:', data);
+//             // Handle success here (e.g., redirecting or showing a success message)
+//         })
+//         .catch(error => {
+//             console.error('Error:', error);
+//             // Handle errors here (e.g., showing an error message)
+//         });
+//     }
+
+//     return (
+//         <div className="form-container">
+//             <form onSubmit={handleSubmit}>
+//                 {/* ...form fields... */}
+//                 <button type="submit">Submit Application</button>
+//             </form>
+//         </div>
+//     );
+// }
+
+// export default CompaniesForm;
 
 
 
