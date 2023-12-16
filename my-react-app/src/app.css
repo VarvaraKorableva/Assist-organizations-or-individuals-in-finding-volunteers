@@ -1,0 +1,130 @@
+/* Add your global styles here */
+
+.App {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    margin: 20px 0;
+    padding: 0 10%; /* Responsive horizontal padding */
+    line-height: 1.6; /* Improved readability */
+  }
+  
+  .options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .option {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .option h2 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .option p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .option button {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .option button:hover {
+    background-color: #0056b3;
+  }
+  
+  .cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+  }
+  
+  /* Style the "Go Back" button */
+  .goBackButton {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    font-size: 14px;
+    width: 120px;
+    text-align: center;
+  }
+  
+  .goBackButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .option img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .options {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .option {
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    .option img {
+      width: 80%;
+      max-width: 200px;
+    }
+  
+    p {
+      padding: 0 5%; /* Reduced padding for smaller screens */
+    }
+  }
+  
+  /* Additional media query for very small screens */
+  @media (max-width: 480px) {
+    p {
+      padding: 0 2%; /* Further reduced padding for very small screens */
+      font-size: 14px; /* Slightly smaller font size for readability */
+    }
+  }
+  
+  
