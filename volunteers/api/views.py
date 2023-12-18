@@ -4,11 +4,6 @@ from assist.models import Action, Volunteer, ActionVolunteer, Company, ActionCom
 from .serializers import ActionSerializer, VolunteerSerializer, CompanySerializer, ActionCompanySerializer, ActionVolunteerSerializer
 
 class ActionViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
-    '''
-    mixins.CreateModelMixin - 'миксин отвечает за метод пост'
-    mixins.ListModelMixin - get all list
-    viewsets.GenericViewSet - необходим для создания вьюсетов(контроллеров) с помощью миксинов
-    '''
     queryset = Action.objects.all() #django orm select * from action
     serializer_class = ActionSerializer
 
@@ -38,3 +33,12 @@ class CompanyViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.Ge
 class ActionCompanyViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = ActionCompany.objects.all()
     serializer_class = ActionCompanySerializer 
+
+
+
+'''
+    класс который используется для создания другого класса который можно смешать с еще одним классом
+    mixins.CreateModelMixin - 'миксин отвечает за метод пост'
+    mixins.ListModelMixin - get all list
+    viewsets.GenericViewSet - необходим для создания вьюсетов(контроллеров) с помощью миксинов
+'''    
