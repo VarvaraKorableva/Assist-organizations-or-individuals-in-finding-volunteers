@@ -1,0 +1,40 @@
+.one-need {
+    border: 1px solid rgb(119, 118, 118);
+    border-radius: 8px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
+}
+
+.one-need__btn {
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    border: 2px solid rgb(187, 162, 211);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.one-need__link {
+    text-decoration: none;
+    color: black;
+}
+
+.one-need__text-title {
+    font-weight: 600;
+}
+
+.one-need__text {
+    margin: 3px;
+}
+
+.one-need__btn:hover {
+    background-color: rgb(187, 162, 211);
+}

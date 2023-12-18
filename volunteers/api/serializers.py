@@ -25,30 +25,10 @@ class ActionVolunteerSerializer(serializers.ModelSerializer):
     class ListActionVolunteerSerializer(serializers.ListSerializer):
     child = ActionVolunteerSerializer()
 
-    
-    передавать лист объектов, а не объект
-    [
-        {
-            "volunteer_id": 1, 
-            "action_id": 2
-        },
-
-                {
-            "volunteer_id": 1, 
-            "action_id": 1
-        }
-    ]
-    
-
-
     def create(self, validated_data):
         return [ActionVolunteer.objects.create(**item) for item in validated_data]
     '''
         
-
-                
-
-
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
