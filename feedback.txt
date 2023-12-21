@@ -1,0 +1,12 @@
+Varvara and Egor: website for volunteers and companies that are looking
+The project is huge for a hackathon, I wonder how you could do all this in three days. Impressive!
+It is divided in front and back-end using react and django. A REST API was created, but not sure for what purprose in the idea.
+The code is well structured as it was made by the frameworks, the usage of OOP and database manipulation is also implemented in the models.
+It is an impressive project! Congrats!
+
+
+Python OOP:8/10
+Modules: 8/10
+Database:8/10
+JSON/API:10/10
+Overall: 9
